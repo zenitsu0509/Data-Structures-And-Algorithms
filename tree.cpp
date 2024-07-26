@@ -1,4 +1,3 @@
-#include <iostream>
 #include <bits/stdtr1c++.h>
 using namespace std;
 class node
