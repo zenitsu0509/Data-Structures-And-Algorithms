@@ -33,34 +33,20 @@ void levelOrderTraversal(node *root)
 {
     queue<node *> q;
     q.push(root);
-    q.push(NULL);
-    while (!q.empty())
-    {
-        node *temp = q.front();
-        q.pop();
-        if (temp == NULL)
-        {
-            cout << endl;
-            if (!q.empty())
-            {
-                q.push(NULL);
-            }
+    vector<vector<<int> lot;
+    while(!q.empty()){
+        int size = q.size();
+        vector<int> level;
+        for(int i = 0;i<size;i++){
+            node* temp = q.front();
+            q.pop();
+            if(temp->left) q.push(temp->left);
+            if(temp->right) q.push(temp->right);
+            level.push_back(temp.data);
         }
-        else
-        {
-            cout << temp->data << " ";
-
-            if (temp->left)
-            {
-                q.push(temp->left);
-            }
-            if (temp->right)
-            {
-                q.push(temp->right);
-            }
-        }
+        lot.push_back(level);
     }
-}
+}   
 // LNR
 void inOrder(node *root)
 {
