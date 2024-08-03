@@ -73,6 +73,21 @@ void inOrder(node *root)
     cout << root->data << " ";
     inOrder(root->right);
 }
+void inOrder_it(node* root){
+    if(root == NULL) return;
+    stack<Node*> st;
+    vector<int> ans;
+
+    while(root != NULL ||!st.empty()){
+        while(root != NULL){
+            st.push(root);
+            root = root->left;
+        }
+        ans.push(st.top()->val);
+        st.pop();
+        root = root->right;
+    }
+}
 // NLR
 void preOrder(node *root)
 {
@@ -84,6 +99,17 @@ void preOrder(node *root)
     preOrder(root->left);
     preOrder(root->right);
 }
+void preOrder(node *root){
+    stack(node*) st;
+    vector<int> ans;
+    st.push(root);
+    while(!st.empty()){
+        ans.push(st.top()->data);
+        st.pop();
+        if(root->left) st.push(root->left);
+        if(root->right) st.push(root->right);
+    }
+}
 // LRN
 void postOrder(node *root)
 {
@@ -94,6 +120,21 @@ void postOrder(node *root)
     postOrder(root->left);
     postOrder(root->right);
     cout << root->data << " ";
+}
+void postOrder(node* root){
+    stack<node*> st,st2;
+    vector<int> ans;
+    st.push(root);
+    while(!st.empty()){
+        st2.push(st1.top());
+        st.pop();
+        if(root->left) st.push(root->left);
+        if(root->right) st.push(root->right);
+    }
+    while(!st2.empty()){
+        ans.push_back(st2.top()->data);
+        st2.pop();
+    }
 }
 int main()
 {
