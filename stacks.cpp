@@ -20,6 +20,7 @@ class Stack{
             cout<<"stack overflow"<<endl;
         }
     }
+
     void pop(){
         if(top >= 0){
             top--;
