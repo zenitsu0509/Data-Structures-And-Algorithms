@@ -52,6 +52,7 @@ int main() {
     st.push(10);
     st.push(15);
     st.push(20);
+    st.push(25);
     cout<<st.isEmpty()<<endl;
     st.pop();
     cout<<st.peek()<<endl;
