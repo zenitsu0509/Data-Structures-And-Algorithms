@@ -52,6 +52,7 @@ int main()
     insertAtPosition(tail, 5, 10);
     insertAtPosition(tail, 10, 20);
     insertAtPosition(tail, 20, 30);
+    insertAtPosition(tail, 30, 40);
     print(tail);
     return 0;
 }
